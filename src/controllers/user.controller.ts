@@ -13,7 +13,7 @@ export const register = async(req:Request,res:Response)=>{
     }
 }
 
-export const logIn = async(req:Request,res:Response,next:NextFunction)=>{
+export const logIn = async(req:Request,res:Response)=>{
     try{
         let {email,password} = req.body;
         let response = await userLogIn(email,password) as IResponse

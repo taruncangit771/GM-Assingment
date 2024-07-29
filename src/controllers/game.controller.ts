@@ -11,7 +11,6 @@ import { IResponse } from "../interfaces/response.interface";
 export const create = async (
   req: Request,
   res: Response,
-  next: NextFunction
 ) => {
   try {
     let { name, genre, releaseDate } = req.body;
@@ -32,7 +31,6 @@ export const create = async (
 export const getGames = async (
   req: Request,
   res: Response,
-  next: NextFunction
 ) => {
   try {
     let { pageNo, perPage, name, genre, sortColumn="created_at", sortOrder="desc" } = req.query as {
