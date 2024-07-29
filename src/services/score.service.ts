@@ -1,5 +1,4 @@
-import { paginate, sendResponse, isTest } from "../utills/commonHelper";
-import { Request, Response } from "express";
+import { paginate, isTest } from "../utills/commonHelper";
 import db from "../config/db.config";
 let test = isTest();
 export const addScore = async (

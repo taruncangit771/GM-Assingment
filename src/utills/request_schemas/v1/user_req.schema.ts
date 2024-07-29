@@ -1,4 +1,4 @@
-import { ValidationSchema } from "../../utills/commonHelper";
+import { ValidationSchema } from "../../commonHelper";
 export const registerUserSchema: ValidationSchema = {
   name: { required: true, type: "string" },
   email: { required: true, type: "string" },

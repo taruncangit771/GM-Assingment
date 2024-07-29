@@ -1,5 +1,3 @@
-import { verbose } from "winston";
-
 module.exports = {
   preset: 'ts-jest',
   verbose:true,

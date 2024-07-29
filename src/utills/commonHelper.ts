@@ -1,6 +1,5 @@
 import { Request, Response, NextFunction } from "express";
 import db from "../config/db.config";
-let test 
 export const isTest =()=>{
   return process?.env?.NODE_ENV=='test'
 }
@@ -28,7 +27,7 @@ export interface ValidationSchema {
 export const validator = (schema: ValidationSchema) => {
   return (req: Request, res: Response, next: NextFunction) => {
     const errors: string[] = [];
-    const body = req.body as Record<string, any>; // Type assertion to let TypeScript know about the shape of `body`
+    const body = req.body as Record<string, any>; 
 
     for (const [key, rules] of Object.entries(schema)) {
       if (rules.required && (body[key] === undefined || body[key] === null)) {
@@ -61,7 +60,7 @@ export const validator = (schema: ValidationSchema) => {
             }
             break;
           case "date":
-            const datePattern = /^\d{4}-\d{2}-\d{2}$/; // DD-MM-YYYY format
+            const datePattern = /^\d{4}-\d{2}-\d{2}$/;
             if (!datePattern.test(body[key])) {
               errors.push(`Invalid date format. Use YYYY-MM-DD for ${key}`);
             }

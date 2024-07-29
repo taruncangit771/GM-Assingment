@@ -10,7 +10,7 @@ const port = process.env.PORT || '3000';
 app.use(express.json());
 app.use(ErrorMiddleware)
 app.use(loggerMiddleware)
-//Health Check
+
 app.get('/', async (req: Request, res: Response) => {
   return res.status(200).json({
     success: true,
@@ -22,7 +22,7 @@ app.get('/', async (req: Request, res: Response) => {
 import mainRoute from './routes/main.routes';
 app.use("/api", mainRoute);
 
-// Start the server
+
 let server = app.listen(port, () => {
   logger.info(`Server is running on http://localhost:${port}`);
   console.log(`Server is running on http://localhost:${port}`)

@@ -1,4 +1,3 @@
-// knexfile.js
 import type { Knex } from "knex";
 const config: { [key: string]: Knex.Config } = {
   development: {

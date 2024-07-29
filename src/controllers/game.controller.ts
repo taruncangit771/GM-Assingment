@@ -1,11 +1,6 @@
 import { sendResponse } from "../utills/commonHelper";
 import { Request, Response, NextFunction } from "express";
 import {
-  userRegistration,
-  userLogIn,
-  userProfile,
-} from "../services/user.service";
-import {
   createGame,
   getSingleGame,
   getAllGame,
