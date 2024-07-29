@@ -3,10 +3,10 @@ const config: { [key: string]: Knex.Config } = {
   development: {
     client: "pg",
     connection: {
-      host: "127.0.0.1",
-      user: "postgres",
-      password: "771771",
-      database: "mydb",
+      host: process.env.DEVLOPMENT_DB_HOST,
+      user: process.env.DEVLOPMENT_DB_USER,
+      password: process.env.DEVLOPMENT_DB_PASSWORD,
+      database: process.env.DEVLOPMENT_DB,
     },
     migrations: {
       directory: "./migrations",
@@ -18,10 +18,10 @@ const config: { [key: string]: Knex.Config } = {
   test: {
     client: "pg",
     connection: {
-      host: "localhost",
-      user: "test_user",
-      password: "test_password",
-      database: "test_db",
+      host: process.env.TEST_DB_HOST,
+      user: process.env.TEST_DB_USER,
+      password: process.env.TEST_DB_PASSWORD,
+      database: process.env.TEST_DB,
     },
     migrations: {
       directory: "./migrations",
@@ -33,10 +33,10 @@ const config: { [key: string]: Knex.Config } = {
   production: {
     client: "pg",
     connection: {
-      host: "your_production_host",
-      user: "your_production_user",
-      password: "your_production_password",
-      database: "your_production_database",
+      host: process.env.PRODUCTION_DB_HOST,
+      user: process.env.PRODUCTION_DB_USER,
+      password: process.env.PRODUCTION_DB_PASSWORD,
+      database: process.env.PRODUCTION_DB,
     },
     migrations: {
       directory: "./migrations",
